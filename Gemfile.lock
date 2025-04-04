@@ -147,6 +147,7 @@ GEM
     nokogiri (1.15.7-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.5.4)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -242,6 +243,7 @@ DEPENDENCIES
   debug
   devise
   jbuilder
+  pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
   sprockets-rails
