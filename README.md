@@ -1,24 +1,24 @@
-# README
+# Project Conversation History
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails application that allows users to leave comments and change the status of a project. The application also provides a conversation history that lists all comments.
 
-Things you may want to cover:
+---
 
-* Ruby version
+## Features
 
-* System dependencies
+- Users can leave comments on a project.
+- Project owners can change the status of their projects.
+- Conversation history includes comments, displayed in chronological order.
+- Projects and users are linked to companies.
 
-* Configuration
+---
 
-* Database creation
+## Tech Stack
 
-* Database initialization
+- **Backend:** Ruby on Rails
+- **Database:** PostgreSQL
+- **Frontend:** Bootstrap for styling
+- **Authentication:** Devise
+- **Deployment:** Heroku
+- **Autherization** Cancancan
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
