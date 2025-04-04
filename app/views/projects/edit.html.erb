@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <h1 class="mb-4 text-center">Edit Project</h1>
+
+  <%= form_with(model: @project, local: true, class: "needs-validation") do |form| %>
+    <% if @project.errors.any? %>
+      <div class="alert alert-danger">
+        <h4 class="alert-heading">
+          <%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:
+        </h4>
+        <ul>
+          <% @project.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Enter project name" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :description, class: "form-label" %>
+      <%= form.text_area :description, class: "form-control", rows: 5, placeholder: "Enter project description" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :status, class: "form-label" %>
+      <%= form.select :status, Project.statuses.keys.map { |status| [status.humanize, status] }, {}, class: "form-select" %>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <%= form.submit 'Update Project', class: 'btn btn-primary' %>
+      <%= link_to 'Back to Projects', projects_path, class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+</div>

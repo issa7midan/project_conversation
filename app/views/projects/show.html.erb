@@ -1,0 +1,15 @@
+<h1><%= @project.name %></h1>
+<p><%= @project.description %></p>
+
+<h3>Status: <%= @project.status.humanize %></h3>
+
+<h3>Comments</h3>
+<%= form_with model: @comment, url: project_comments_path(@project), method: :post do |f| %>
+  <%= f.text_area :body, class: 'form-control', placeholder: 'Add a comment...' %>
+  <%= f.submit 'Add Comment', class: 'btn btn-secondary mt-2' %>
+<% end %>
+
+<% @project.comments.each do |comment| %>
+  <p><strong><%= comment.user.email %>:</strong> <%= comment.body %></p>
+  <p><em><%= comment.created_at %></em></p>
+<% end %>
